@@ -370,10 +370,8 @@ def install_extension_from_url(dirname, url, branch_name=None):
 
 
 def install_extension_from_index(url, hide_tags, sort_column, filter_text):
-    if url.index('github.com') > 0:
-        url = 'https://ghproxy.com/' + url
-    print("install_extension_from_index replace url to %s" % url)
-    ext_table, message = install_extension_from_url(None, url)
+    import proxy.util
+    ext_table, message = install_extension_from_url(None, proxy.util.proxy_url(url))
 
     code, _ = refresh_available_extensions_from_data(hide_tags, sort_column, filter_text)
 

@@ -48,7 +48,8 @@ def load_models(model_path: str, model_url: str = None, command_path: str = None
         if model_url is not None and len(output) == 0:
             if download_name is not None:
                 from basicsr.utils.download_util import load_file_from_url
-                dl = load_file_from_url(model_url, model_path, True, download_name)
+                import proxy.util
+                dl = load_file_from_url(proxy.util.proxy_url(model_url), model_path, True, download_name)
                 output.append(dl)
             else:
                 output.append(model_url)
