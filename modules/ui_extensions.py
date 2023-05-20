@@ -370,6 +370,9 @@ def install_extension_from_url(dirname, url, branch_name=None):
 
 
 def install_extension_from_index(url, hide_tags, sort_column, filter_text):
+    if url.index('github.com') > 0:
+        url = 'https://ghproxy.com/' + url
+    print("install_extension_from_index replace url to %s" % url)
     ext_table, message = install_extension_from_url(None, url)
 
     code, _ = refresh_available_extensions_from_data(hide_tags, sort_column, filter_text)
@@ -527,7 +530,7 @@ def create_ui():
             with gr.TabItem("Available", id="available"):
                 with gr.Row():
                     refresh_available_extensions_button = gr.Button(value="Load from:", variant="primary")
-                    available_extensions_index = gr.Text(value="https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui-extensions/master/index.json", label="Extension index URL").style(container=False)
+                    available_extensions_index = gr.Text(value="https://ghproxy.com/https://raw.githubusercontent.com/AUTOMATIC1111/stable-diffusion-webui-extensions/master/index.json", label="Extension index URL").style(container=False)
                     extension_to_install = gr.Text(elem_id="extension_to_install", visible=False)
                     install_extension_button = gr.Button(elem_id="install_extension_button", visible=False)
 

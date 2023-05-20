@@ -149,7 +149,9 @@ def check_run_python(code):
 
 def git_clone(url, dir, name, commithash=None):
     # TODO clone into temporary dir and move if successful
-
+    if url.index('github.com') > 0:
+        url = 'https://ghproxy.com/' + url
+    print("git_clone replace url to %s" % url)
     if os.path.exists(dir):
         if commithash is None:
             return
