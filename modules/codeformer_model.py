@@ -60,7 +60,6 @@ def setup_model(dirname):
                     print("Unable to load codeformer model.")
                     return None, None
                 net = net_class(dim_embd=512, codebook_size=1024, n_head=8, n_layers=9, connect_list=['32', '64', '128', '256']).to(devices.device_codeformer)
-                print("FaceRestorerCodeFormer.create_models ckpt_path:%s"%ckpt_path)
                 checkpoint = torch.load(ckpt_path)['params_ema']
                 net.load_state_dict(checkpoint)
                 net.eval()
