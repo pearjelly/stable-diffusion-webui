@@ -5,7 +5,7 @@ blendmodes
 accelerate
 basicsr
 gfpgan
-gradio==3.29.0
+gradio==3.30.0
 numpy
 omegaconf
 opencv-contrib-python
