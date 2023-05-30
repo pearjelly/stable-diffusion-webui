@@ -1,5 +1,5 @@
 pyqtwebengine
-
+opencv-python
 astunparse
 blendmodes
 accelerate
