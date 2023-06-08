@@ -46,24 +46,26 @@ from typing import (
 )
 
 
-def clone_from_with_proxy(
-        cls,
-        url: PathLike,
-        to_path: PathLike,
-        progress: Optional[Callable] = None,
-        env: Optional[Mapping[str, str]] = None,
-        multi_options: Optional[List[str]] = None,
-        allow_unsafe_protocols: bool = False,
-        allow_unsafe_options: bool = False,
-        **kwargs,
-):
-    from proxy import util
-    url = util.proxy_url(url)
-    base.Repo.clone_from(cls, url, to_path, progress, env, multi_options, allow_unsafe_protocols, allow_unsafe_options,
-                         **kwargs)
+class ProxyRepo(base.Repo):
+    @classmethod
+    def clone_from_with_proxy(
+            cls,
+            url: PathLike,
+            to_path: PathLike,
+            progress: Optional[Callable] = None,
+            env: Optional[Mapping[str, str]] = None,
+            multi_options: Optional[List[str]] = None,
+            allow_unsafe_protocols: bool = False,
+            allow_unsafe_options: bool = False,
+            **kwargs,
+    ):
+        from proxy import util
+        url = util.proxy_url(url)
+        base.Repo.clone_from(url, to_path, progress, env, multi_options, allow_unsafe_protocols, allow_unsafe_options,
+                             **kwargs)
 
 
-base.Repo.clone_from = clone_from_with_proxy
+base.Repo = ProxyRepo
 
 
 # end
