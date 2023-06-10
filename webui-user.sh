@@ -2,6 +2,8 @@
 #########################################################
 # Uncomment and change the variables below to your need:#
 #########################################################
+export TF_ENABLE_ONEDNN_OPTS=0
+export PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:128
 
 # Install directory without trailing slash
 #install_dir="/home/$(whoami)"
@@ -10,7 +12,7 @@
 #clone_dir="stable-diffusion-webui"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-export COMMANDLINE_ARGS="--enable-insecure-extension-access --xformers --listen"
+export COMMANDLINE_ARGS="--enable-insecure-extension-access --xformers --listen --medvram"
 
 # python3 executable
 #python_cmd="python3"
