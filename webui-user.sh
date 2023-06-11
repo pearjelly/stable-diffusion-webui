@@ -12,7 +12,7 @@ export PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_m
 #clone_dir="stable-diffusion-webui"
 
 # Commandline arguments for webui.py, for example: export COMMANDLINE_ARGS="--medvram --opt-split-attention"
-export COMMANDLINE_ARGS="--enable-insecure-extension-access --xformers --listen --medvram"
+export COMMANDLINE_ARGS="--enable-insecure-extension-access --xformers --listen --api"
 
 # python3 executable
 #python_cmd="python3"
