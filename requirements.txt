@@ -16,9 +16,9 @@ pytorch_lightning==1.7.7
 realesrgan
 scikit-image>=0.19
 timm==0.4.12
-transformers==4.25.1
-torch==2.0.0
-torchvision==0.15.1
+transformers==4.30.2
+torch==2.0.1
+torchvision==0.15.2
 einops
 jsonmerge
 clean-fid
@@ -34,3 +34,9 @@ psutil
 rich
 tomesd
 pycairo==1.23.0
+
+# add for ubuntu
+xformers==0.0.20
+open_clip_torch==2.20.0
+clip
+gdown
