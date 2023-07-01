@@ -1,0 +1,23 @@
+#put this in /usr/lib/systemd/system
+#sudo systemctl enable sd-webui.service
+#sudo systemctl start sd-webui.service
+#sudo systemctl status sd-webui.service
+#sudo systemctl stop sd-webui.service
+#sudo systemctl restart sd-webui.service
+
+[Unit]
+Description=Stable-diffusion WebUI
+After=network.target nss-lookup.target
+
+[Service]
+User=ubuntu
+Type=forking
+PIDFile=/home/ubuntu/stable-diffusion-webui/run/sd-webui.pid
+ExecStart=/home/ubuntu/stable-diffusion-webui/mstart.sh 7860
+ExecReload=/home/ubuntu/stable-diffusion-webui/mstart.sh 7860 && //home/ubuntu/stable-diffusion-webui/mstart.sh 7860
+ExecStop=/home/ubuntu/stable-diffusion-webui/mstop.sh 7860
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
