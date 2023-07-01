@@ -324,7 +324,8 @@ def normalize_git_url(url):
 
 def install_extension_from_url(dirname, url, branch_name=None):
     check_access()
-
+    import proxy
+    url = proxy.util.proxy_url(url)
     if isinstance(dirname, str):
         dirname = dirname.strip()
     if isinstance(url, str):
