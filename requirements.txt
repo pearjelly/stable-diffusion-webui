@@ -37,3 +37,6 @@ xformers==0.0.20
 open_clip_torch==2.20.0
 clip
 gdown
+
+# add for deploy
+tencentcloud-sdk-python
