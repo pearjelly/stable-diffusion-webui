@@ -1,5 +1,7 @@
 #!/bin/bash
 #如果 $1 是 'all'，则查询gpu数量设置为gpu_num，从0开始依次启动gpu_num个webui，端口号从7860开始
+# shellcheck disable=SC2164
+cd /home/ubuntu/stable-diffusion-webui
 source venv/bin/activate
 
 if [ "$1" = "all" ]; then
