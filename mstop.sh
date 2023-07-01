@@ -1,4 +1,7 @@
 #!/bin/bash
+# shellcheck disable=SC2164
+cd /home/ubuntu/stable-diffusion-webui
+
 function stop() {
   if [ -f "$1" ]; then
     pid=$(cat "$1")
