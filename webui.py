@@ -74,12 +74,24 @@ import modules.hypernetworks.hypernetwork
 from basicsr.utils import download_util
 
 
-old_load_file_from_url = download_util.load_file_from_url
-
 def load_file_from_url_user_proxy(url, model_dir=None, progress=True, file_name=None):
     from proxy import util
     url = util.proxy_url(url)
-    old_load_file_from_url(url, model_dir, progress, file_name)
+    if model_dir is None:  # use the pytorch hub_dir
+        hub_dir = download_util.get_dir()
+        model_dir = os.path.join(hub_dir, 'checkpoints')
+
+    os.makedirs(model_dir, exist_ok=True)
+
+    parts = download_util.urlparse(url)
+    filename = os.path.basename(parts.path)
+    if file_name is not None:
+        filename = file_name
+    cached_file = os.path.abspath(os.path.join(model_dir, filename))
+    if not os.path.exists(cached_file):
+        print(f'Downloading: "{url}" to {cached_file}\n')
+        download_util.download_url_to_file(url, cached_file, hash_prefix=None, progress=progress)
+    return cached_file
 
 
 download_util.load_file_from_url = load_file_from_url_user_proxy
