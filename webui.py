@@ -71,42 +71,42 @@ import modules.hypernetworks.hypernetwork
 
 
 # begin 覆盖load_file_from_url,使用ghproxy加速github访问
-from basicsr.utils import download_util
-import launch
-download_util.load_file_from_url = launch.load_file_from_url_user_proxy
-
-from git.repo import base
-from git.types import (
-    PathLike,
-)
-from typing import (
-    Callable,
-    List,
-    Mapping,
-    Optional,
-)
-
-
-class ProxyRepo(base.Repo):
-    @classmethod
-    def clone_from_with_proxy(
-            cls,
-            url: PathLike,
-            to_path: PathLike,
-            progress: Optional[Callable] = None,
-            env: Optional[Mapping[str, str]] = None,
-            multi_options: Optional[List[str]] = None,
-            allow_unsafe_protocols: bool = False,
-            allow_unsafe_options: bool = False,
-            **kwargs,
-    ):
-        from proxy import util
-        url = util.proxy_url(url)
-        base.Repo.clone_from(url, to_path, progress, env, multi_options, allow_unsafe_protocols, allow_unsafe_options,
-                             **kwargs)
-
-
-base.Repo = ProxyRepo
+# from basicsr.utils import download_util
+# import launch
+# download_util.load_file_from_url = launch.load_file_from_url_user_proxy
+#
+# from git.repo import base
+# from git.types import (
+#     PathLike,
+# )
+# from typing import (
+#     Callable,
+#     List,
+#     Mapping,
+#     Optional,
+# )
+#
+#
+# class ProxyRepo(base.Repo):
+#     @classmethod
+#     def clone_from_with_proxy(
+#             cls,
+#             url: PathLike,
+#             to_path: PathLike,
+#             progress: Optional[Callable] = None,
+#             env: Optional[Mapping[str, str]] = None,
+#             multi_options: Optional[List[str]] = None,
+#             allow_unsafe_protocols: bool = False,
+#             allow_unsafe_options: bool = False,
+#             **kwargs,
+#     ):
+#         from proxy import util
+#         url = util.proxy_url(url)
+#         base.Repo.clone_from(url, to_path, progress, env, multi_options, allow_unsafe_protocols, allow_unsafe_options,
+#                              **kwargs)
+#
+#
+# base.Repo = ProxyRepo
 
 
 # end
