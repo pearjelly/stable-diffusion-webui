@@ -74,10 +74,12 @@ import modules.hypernetworks.hypernetwork
 from basicsr.utils import download_util
 
 
+old_load_file_from_url = download_util.load_file_from_url
+
 def load_file_from_url_user_proxy(url, model_dir=None, progress=True, file_name=None):
     from proxy import util
     url = util.proxy_url(url)
-    download_util.load_file_from_url(url, model_dir, progress, file_name)
+    old_load_file_from_url(url, model_dir, progress, file_name)
 
 
 download_util.load_file_from_url = load_file_from_url_user_proxy
