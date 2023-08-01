@@ -36,7 +36,7 @@ torch==2.0.1
 torchvision==0.15.2
 xformers==0.0.20
 open_clip_torch==2.20.0
-clip==1.0
+clip==0.2.0
 gdown
 
 # add for deploy
