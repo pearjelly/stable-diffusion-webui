@@ -1,0 +1,16 @@
+[Unit]
+Description=Stable-diffusion WebUI
+After=network.target nss-lookup.target
+
+[Service]
+User=ubuntu
+Type=forking
+ExecStart=/home/ubuntu/stable-diffusion-webui/admin/startup.sh start 3
+ExecReload=/home/ubuntu/stable-diffusion-webui/admin/startup.sh restart 3
+ExecStop=/home/ubuntu/stable-diffusion-webui/admin/startup.sh stop 3
+Restart=on-abnormal
+TimeoutStopSec=5
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
