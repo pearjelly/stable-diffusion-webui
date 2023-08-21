@@ -37,7 +37,7 @@ notification.mp3
 /node_modules
 /package-lock.json
 /.coverage*
-/extensions/
-/models/
-/embeddings/
+extensions
+models
+embeddings
 /run/
