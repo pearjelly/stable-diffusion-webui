@@ -1,6 +1,7 @@
 local jwt = require "resty.jwt"
 local secret = "@OB0l=5#LOJdLTdRg&hfjYgTqG%K*K7V5"
 local token = ngx.var.cookie_webui_token
+print(token)
 if token == nil then
     ngx.exit(ngx.HTTP_UNAUTHORIZED)
 end
@@ -11,4 +12,6 @@ end
 if jwt_obj["payload"]["exp"] < ngx.time() then
     ngx.exit(ngx.HTTP_UNAUTHORIZED)
 end
-ngx.var.instance = jwt_obj["payload"]["instance"]
+local instance = jwt_obj["payload"]["instance"]
+print(instance)
+ngx.var.instance = instance
