@@ -1,6 +1,6 @@
 local jwt = require "resty.jwt"
 local secret = "@OB0l=5#LOJdLTdRg&hfjYgTqG%K*K7V5"
-local token = ngx.var.cookie_token
+local token = ngx.var.cookie_webui_token
 if token == nil then
     ngx.exit(ngx.HTTP_UNAUTHORIZED)
 end
