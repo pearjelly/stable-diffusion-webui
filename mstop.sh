@@ -2,11 +2,9 @@
 # shellcheck disable=SC2164
 
 function stop() {
-  if [ -f "$1" ]; then
-    pid=$(cat "$1")
-    echo "stop $pid"
-    kill "$pid"
-    rm -f "$1"
+  if [ "$1" ]; then
+    ps -ef | grep "python" | grep "launch.py" | grep -v "grep" | grep "$1" | awk '{print $2}' | xargs kill
+    echo "stop $1"
   else
     echo "$1 not exist"
   fi
@@ -20,7 +18,7 @@ if [ "$1" = "all" ]; then
   for ((i = 0; i < gpu_num; i++)); do
     port=$((7860 + i))
     echo "stop webui on port $port with device id $i"
-    stop run/stable-diffusion-"$port".pid
+    stop "$port"
   done
 else
   if [ "$1" ]; then
@@ -29,5 +27,5 @@ else
     port=7860
   fi
   echo "stop webui on port $port"
-  stop run/stable-diffusion-"$port".pid
+  stop "$port"
 fi
