@@ -1,5 +1,5 @@
 {
-    "samples_save": true,
+    "samples_save": false,
     "samples_format": "png",
     "samples_filename_pattern": "",
     "save_images_add_number": true,
@@ -76,7 +76,7 @@
     "training_enable_tensorboard": false,
     "training_tensorboard_save_images": false,
     "training_tensorboard_flush_every": 120,
-    "sd_model_checkpoint": "2D\u7ed8\u753b/duchaitenniji_cuteV235.safetensors [580174dabb]",
+    "sd_model_checkpoint": "2D\u7ed8\u753b/mixProV4MIXProV45Fp16_40.safetensors [da86cc9d88]",
     "sd_checkpoint_cache": 0,
     "sd_vae_checkpoint_cache": 0,
     "sd_vae": "vae-ft-mse-840000-ema-pruned.ckpt",
@@ -131,7 +131,7 @@
     "extra_networks_card_height": 0,
     "extra_networks_card_text_scale": 1.0,
     "extra_networks_card_show_desc": true,
-    "extra_networks_add_text_separator": " ",
+    "extra_networks_add_text_separator": " ,",
     "ui_extra_networks_tab_reorder": "Checkpoints,Textual Inversion,Hypernetworks,Lora",
     "textual_inversion_print_at_load": false,
     "textual_inversion_add_hashes_to_infotext": true,
@@ -163,7 +163,12 @@
         "Civit AI",
         "Wildcards Manager",
         "Checkpoint Merger",
-        "Train"
+        "Train",
+        "Extensions",
+        "\u6a21\u578b\u4e0b\u8f7d",
+        "Infinite image browsing",
+        "Model Organizer",
+        "Settings"
     ],
     "ui_reorder_list": [
         "extra_options"
@@ -211,7 +216,7 @@
     ],
     "disable_all_extensions": "none",
     "restore_config_state_file": "",
-    "sd_checkpoint_hash": "580174dabbf2059ca4eafe094f5a83f7f74a4f8655f32701e52518c92640407d",
+    "sd_checkpoint_hash": "d7e2ac2f4a1f8853a327e38ec8b8fabc000205d17722ad055d84f2507c84b9ac",
     "ldsr_steps": 100,
     "ldsr_cached": false,
     "SCUNET_tile": 256,
