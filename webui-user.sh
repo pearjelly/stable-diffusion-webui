@@ -3,7 +3,7 @@
 # Uncomment and change the variables below to your need:#
 #########################################################
 export TF_ENABLE_ONEDNN_OPTS=0
-export PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:512
+export PYTORCH_CUDA_ALLOC_CONF=garbage_collection_threshold:0.9,max_split_size_mb:128
 
 # Install directory without trailing slash
 #install_dir="/home/$(whoami)"
