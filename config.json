@@ -79,7 +79,7 @@
     "sd_model_checkpoint": "2D\u7ed8\u753b/mixProV4MIXProV45Fp16_40.safetensors [da86cc9d88]",
     "sd_checkpoint_cache": 0,
     "sd_vae_checkpoint_cache": 0,
-    "sd_vae": "vae-ft-mse-840000-ema-pruned.ckpt",
+    "sd_vae": "Automatic",
     "sd_vae_as_default": true,
     "sd_unet": "Automatic",
     "inpainting_mask_weight": 1.0,
