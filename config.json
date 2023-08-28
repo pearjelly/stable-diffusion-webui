@@ -164,11 +164,9 @@
         "Wildcards Manager",
         "Checkpoint Merger",
         "Train",
-        "Extensions",
         "\u6a21\u578b\u4e0b\u8f7d",
         "Infinite image browsing",
-        "Model Organizer",
-        "Settings"
+        "Model Organizer"
     ],
     "ui_reorder_list": [
         "extra_options"
