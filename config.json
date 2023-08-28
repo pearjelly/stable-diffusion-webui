@@ -210,7 +210,8 @@
     "upscaling_max_images_in_cache": 5,
     "disabled_extensions": [
         "Stable-Diffusion-Webui-Prompt-Translator",
-        "sd-webui-bilingual-localization"
+        "sd-webui-bilingual-localization",
+        "stable-diffusion-webui-nsfw-censor"
     ],
     "disable_all_extensions": "none",
     "restore_config_state_file": "",
