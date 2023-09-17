@@ -87,8 +87,18 @@ base.Repo = ProxyRepo
 
 
 def main():
-    if not args.skip_prepare_environment:
-        prepare_environment()
+    if args.dump_sysinfo:
+        filename = launch_utils.dump_sysinfo()
+
+        print(f"Sysinfo saved as {filename}. Exiting...")
+
+        exit(0)
+
+    launch_utils.startup_timer.record("initial startup")
+
+    with launch_utils.startup_timer.subcategory("prepare environment"):
+        if not args.skip_prepare_environment:
+            prepare_environment()
 
     if args.test_server:
         configure_for_tests()
