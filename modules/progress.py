@@ -71,7 +71,7 @@ def progressapi(req: ProgressRequest):
     completed = req.id_task in finished_tasks
 
     if not active:
-        return ProgressResponse(active=active, queued=queued, completed=completed, id_live_preview=-1, textinfo="In queue..." if queued else "Waiting...")
+        return ProgressResponse(active=active, queued=queued, completed=completed, id_live_preview=-1, textinfo="排队中..." if queued else "等待...")
 
     progress = 0
 
