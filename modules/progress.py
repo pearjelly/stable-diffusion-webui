@@ -71,7 +71,12 @@ def progressapi(req: ProgressRequest):
     completed = req.id_task in finished_tasks
 
     if not active:
-        return ProgressResponse(active=active, queued=queued, completed=completed, id_live_preview=-1, textinfo="排队中..." if queued else "等待...")
+        textinfo = "等待处理..."
+        if queued:
+            sorted_queued = sorted(pending_tasks.keys(), key=lambda x: pending_tasks[x])
+            queue_index = sorted_queued.index(req.id_task)
+            textinfo = "排队中: {}/{}".format(queue_index + 1, len(sorted_queued))
+        return ProgressResponse(active=active, queued=queued, completed=completed, id_live_preview=-1, textinfo=textinfo)
 
     progress = 0
 
