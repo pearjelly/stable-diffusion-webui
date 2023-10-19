@@ -2,6 +2,7 @@
 cmd=$1
 cnt=$2
 # shellcheck disable=SC2164
+sudo mount /dev/vdb1 /home/ubuntu/ext_models
 cd /home/ubuntu/stable-diffusion-webui
 gpu_num=$(nvidia-smi -L | wc -l)
 for ((i = 0; i < cnt; i++)); do
