@@ -36,7 +36,7 @@ else
     fi
   else
     echo "start webui on port $port"
-    nohup ./webui.sh --subpath webui --port "$port" >>log/stable-diffusion-"$port".log 2>&1 &
+    nohup ./webui.sh --port "$port" >>log/stable-diffusion-"$port".log 2>&1 &
     echo $! >./run/stable-diffusion-"$port".pid
   fi
 
