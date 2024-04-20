@@ -332,7 +332,7 @@ def prepare_environment():
             #   - Provides a compatible torchvision wheel: https://github.com/intel/intel-extension-for-pytorch/issues/465
             # Limitation:
             #   - Only works for python 3.10
-            url_prefix = "https://github.com/Nuullll/intel-extension-for-pytorch/releases/download/v2.0.110%2Bxpu-master%2Bdll-bundle"
+            url_prefix = "https://mirror.ghproxy.com/https://github.com/Nuullll/intel-extension-for-pytorch/releases/download/v2.0.110%2Bxpu-master%2Bdll-bundle"
             torch_command = os.environ.get('TORCH_COMMAND', f"pip install {url_prefix}/torch-2.0.0a0+gite9ebda2-cp310-cp310-win_amd64.whl {url_prefix}/torchvision-0.15.2a0+fa99a53-cp310-cp310-win_amd64.whl {url_prefix}/intel_extension_for_pytorch-2.0.110+gitc6ea20b-cp310-cp310-win_amd64.whl")
         else:
             # Using official IPEX release for linux since it's already an AOT build.
@@ -344,14 +344,14 @@ def prepare_environment():
     requirements_file_for_npu = os.environ.get('REQS_FILE_FOR_NPU', "requirements_npu.txt")
 
     xformers_package = os.environ.get('XFORMERS_PACKAGE', 'xformers==0.0.23.post1')
-    clip_package = os.environ.get('CLIP_PACKAGE', "https://github.com/openai/CLIP/archive/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
-    openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://github.com/mlfoundations/open_clip/archive/bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b.zip")
+    clip_package = os.environ.get('CLIP_PACKAGE', "https://mirror.ghproxy.com/https://github.com/openai/CLIP/archive/d50d76daa670286dd6cacf3bcd80b5e4823fc8e1.zip")
+    openclip_package = os.environ.get('OPENCLIP_PACKAGE', "https://mirror.ghproxy.com/https://github.com/mlfoundations/open_clip/archive/bb6e834e9c70d9c27d0dc3ecedeebeaeb1ffad6b.zip")
 
-    assets_repo = os.environ.get('ASSETS_REPO', "https://github.com/AUTOMATIC1111/stable-diffusion-webui-assets.git")
+    assets_repo = os.environ.get('ASSETS_REPO', "https://mirror.ghproxy.com/https://github.com/AUTOMATIC1111/stable-diffusion-webui-assets.git")
     stable_diffusion_repo = os.environ.get('STABLE_DIFFUSION_REPO', "https://mirror.ghproxy.com/https://github.com/Stability-AI/stablediffusion.git")
-    stable_diffusion_xl_repo = os.environ.get('STABLE_DIFFUSION_XL_REPO', "https://github.com/Stability-AI/generative-models.git")
-    k_diffusion_repo = os.environ.get('K_DIFFUSION_REPO', 'https://github.com/crowsonkb/k-diffusion.git')
-    blip_repo = os.environ.get('BLIP_REPO', 'https://github.com/salesforce/BLIP.git')
+    stable_diffusion_xl_repo = os.environ.get('STABLE_DIFFUSION_XL_REPO', "https://mirror.ghproxy.com/https://github.com/Stability-AI/generative-models.git")
+    k_diffusion_repo = os.environ.get('K_DIFFUSION_REPO', 'https://mirror.ghproxy.com/https://github.com/crowsonkb/k-diffusion.git')
+    blip_repo = os.environ.get('BLIP_REPO', 'https://mirror.ghproxy.com/https://github.com/salesforce/BLIP.git')
 
     assets_commit_hash = os.environ.get('ASSETS_COMMIT_HASH', "6f7db241d2f8ba7457bac5ca9753331f0c266917")
     stable_diffusion_commit_hash = os.environ.get('STABLE_DIFFUSION_COMMIT_HASH', "cf1d67a6fd5ea1aa600c4df58e5b47da45f6bdbf")
