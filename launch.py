@@ -23,7 +23,7 @@ prepare_environment = launch_utils.prepare_environment
 configure_for_tests = launch_utils.configure_for_tests
 start = launch_utils.start
 
-# begin 覆盖load_file_from_url,使用ghproxy加速github访问
+# begin 覆盖load_file_from_url,使用mirror.ghproxy加速github访问
 from basicsr.utils import download_util
 import os
 
