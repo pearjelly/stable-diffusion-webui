@@ -2,12 +2,13 @@ GitPython
 Pillow
 accelerate
 
-basicsr
 blendmodes
 clean-fid
+diskcache
 einops
-gfpgan
-gradio==3.32.0
+facexlib
+fastapi>=0.90.1
+gradio==3.41.2
 inflection
 jsonmerge
 kornia
@@ -19,25 +20,13 @@ open-clip-torch
 piexif
 psutil
 pytorch_lightning
-realesrgan
 requests
 resize-right
 
 safetensors
 scikit-image>=0.19
-timm
 tomesd
+torch
 torchdiffeq
 torchsde
 transformers==4.30.2
-
-# add for ubuntu
-torch==2.0.1
-torchvision==0.15.2
-xformers==0.0.20
-open_clip_torch==2.20.0
-clip==0.2.0
-gdown
-
-# add for deploy
-tencentcloud-sdk-python
